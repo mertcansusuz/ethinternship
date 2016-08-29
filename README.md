@@ -1,2 +1,2 @@
 # ethinternship
-These works involves what I did on my first internship, at ETH Zürich.
+This repository includes my researchs & codes for my internship, at Swiss Federal Institute of Technology (ETH Zurich).
