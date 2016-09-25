@@ -1,0 +1,146 @@
+\documentclass{book}
+\usepackage{graphicx}
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\hbox{ % Horizontal box
+\hspace*{0.2\textwidth} % Whitespace to the left of the title page
+\rule{1pt}{\textheight} % Vertical line
+\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+
+{\noindent\Huge\bfseries Simple Compiler}\\[2\baselineskip] % Title
+{\large \textit{by using Python}}\\[4\baselineskip] % Tagline or further description
+{\Large \textsc{Delikanli Mertcan Susuz
+\newline
+\newline
+eth zurich
+}} % Author name
+
+\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+{\noindent 15.08.2016}\\[\baselineskip] % Publisher and logo
+}}
+\endgroup}
+
+%----------------------------------------------------------------------------------------
+%	BLANK DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\pagestyle{empty} % Removes page numbers
+
+\titleGM % This command includes the title page
+
+
+
+
+\newpage
+\section{Introduction}
+	This report includes my research,study and practice for my internship project, making a simple compiler using Python programming language.
+
+
+\section{What is Compiler ?}
+	A compiler is a computer program that transforms source code written in a programming language into another computer language, with the latter often having a binary form known as object code.
+\newline
+\newline	
+\newline
+\newline	
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{cm.jpg}
+\caption{What is Compiler? \label{overflow}}
+\end{figure}
+\newpage
+\section{Components of a Compiler}
+    A compiler is often made up of several components, one of which is a parser. A common set of components in a compiler is:\newline
+\textbf{Lexer} - break the program up into words.
+\newline
+\textbf{Parser} - check that the syntax of the sentences are correct.
+\newline
+\textbf{Interpreter} - explicitly execute stored precompiled codemade by a compiler which is part of the interpreter system.
+\newline
+\textbf{Semantic Analysis} - check that the sentences make sense.
+\newline
+\textbf{Optimizer} - edit the sentences for brevity.
+\newline
+\textbf{Code generator} - output something with equivalent semantic meaning using another vocabulary.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{im1.jpg}
+\caption{The goal of a compiler is to translate a source program in some high-level language into some other form. \label{overflow}}
+\end{figure}
+    
+\section{Lexer}
+    The process of breaking the input string into tokens is called lexical analysis. So, the first step your compiler needs to do is read the input of characters and convert it into a stream of tokens. The part of the compiler that does it is called a lexical analyzer, or lexer for short.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{im2.jpg}
+\caption{Lexer \label{overflow}}
+\end{figure}
+    
+\section{Parser}
+    The process of recognizing a phrase in the stream of tokens is called parsing. And the part of a compiler that performs that job is called a parser. Parsing is also called syntax analysis, and the parser is also aptly called, a syntax analyzer.
+    
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{im3.jpg}
+\caption{Parser \label{overflow}}
+\end{figure}
+
+
+\section{Trees}
+    \textbf{What is a parse tree?} A parse-tree is a tree that represents the syntactic structure of a language construct according to our grammar definition. It basically shows how your parser recognized the language construct or, in other words, it shows how the start symbol of your grammar derives a certain string in the programming language.\newline
+\textbf{What is abstract-syntax trees(AST)?} The AST captures the essence of the input while being smaller.
+    
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{vs.jpg}
+\caption{Parse Tree and AST for "9-5+2"\label{overflow}}
+\end{figure}
+
+\textbf{Here are the main differences between ASTs and Parse trees:}\newline\newline
+1-ASTs uses operators/operations as root and interior nodes and it uses operands as their children.\newline
+2-ASTs do not use interior nodes to represent a grammar rule, unlike the parse tree does.\newline
+3-ASTs don’t represent every detail from the real syntax (that’s why they’re called abstract) - no rule nodes and no parentheses, for example.\newline
+4-ASTs are dense compared to a parse tree for the same language construct.\newline
+
+
+ 
+\section{Analysis / Testing}
+    I always work on terminal and tested my code multiple times.
+ \begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{code2.jpg}
+\caption{Terminal\label{overflow}}
+\end{figure}
+\newline
+\newline
+\newline
+\newline
+\section{The Code}
+	I used python programmin language in this project.I learned so many new things about computer and machine learning,also learned new methods and things on python. The code attached on the mail.
+	
+
+
+\newpage
+\section{Conclusion}
+In this process, I learned a lot of things about computer, machine learning and how the computer works. I tried to implement a simple compiler which understands binary operations. I used python programming language and also learned a lot of knowledge for python. I used some methods for the first time. 
+    
+
+
+\section{References}
+    -Compilers: Principles, Techniques, and Tools by \textit{Alfred V. Aho , Ravi Sethi, Jeffrey D. Ullman}\newline
+    -Writing Compilers and Interpreters: A Software Engineering Approach by \textit{Ronald Mark}\newline
+    -stackoverflow.com\newline
+    -coursera.org\newline
+    
+    
+\end{document}
