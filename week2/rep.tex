@@ -1,0 +1,221 @@
+\documentclass{report}
+\usepackage{listings}
+\title{Report}
+\author{Mertcan Susuz}
+\date{18 June 2016}
+
+\begin{document}
+\maketitle
+{\Large \textbf{1. Aim}}
+
+\begin{flushleft}
+The aim is assigning a value for each character of the alphabet. When user enters character(s) as an input, program will return the value of this character(s).
+\end{flushleft}
+
+
+
+
+{\Large \textbf{2.Python code:}}
+\newline
+\newline
+\textbf{{\large a. Full code.}}
+
+
+\begin{lstlisting}
+from random import randint
+letters = ("abcdefghijklmnopqrstuvwxyz")
+letters_list = []
+new = []
+output=[]
+for j in range(len(letters)):
+  letters_list.append(letters[j])
+
+print(letters_list)
+
+for i in range(len(letters)):
+   x = { letters[i] : randint(0,9) }
+   new.append(x)
+
+print(new)
+
+user_input = input("Enter a letter:")
+
+for char in user_input:
+  index = letters_list.index(char)
+  num = new[index].get(char)
+  output.append(num)
+
+print(output)
+\end{lstlisting}
+
+
+\begin{flushleft}
+\textbf{{\large b. Explanation}}
+\end{flushleft}
+
+\begin{flushleft}
+Firstly, I created a tuple which contains all alphabet letters and created three empty list.
+\end{flushleft}
+\begin{lstlisting}
+from random import randint
+letters = ("abcdefghijklmnopqrstuvwxyz")
+letters_list = []
+new = []
+output=[]
+\end{lstlisting}
+
+\newpage
+
+\begin{flushleft}
+Then I wrote a for loop which each letter separately adds to the list. After that process, there was a list with all the letters and I checked it.
+\end{flushleft}
+
+\begin{lstlisting}
+for j in range(len(letters)):
+  letters_list.append(letters[j])
+print(letters_list)
+\end{lstlisting}
+
+
+
+\begin{flushleft}
+I wrote one more for loop which gives me numbers randomly between 0 and 9 and assign these number to each letters.When I do that, I use dictionary for determine the keys and values.In this case, keys are letters and values are numbers.
+\end{flushleft}
+
+\begin{lstlisting}
+for i in range(len(letters)):
+   x = { letters[i] : randint(0,9) }
+   new.append(x)
+print(new)
+\end{lstlisting}
+
+
+\begin{flushleft}
+Finally, I wrote an input code which wants an enter from user. After that, I created a for loop which checks the user's entry, creating an index and a number who represent this this index -letter- , and then append these numbers to the output. When user enter letters, the output will return numbers which represent by these letters.
+\end{flushleft}
+
+\begin{lstlisting}
+user_input = input("Enter a letter:")
+
+for char in user_input:
+  index = letters_list.index(char)
+  num = new[index].get(char)
+  output.append(num)
+
+print(output)
+\end{lstlisting}
+
+
+\newpage
+
+{\Large \textbf{3.Java Code:}}
+\newline
+\newline
+\newline
+{\large \textbf{a. Full Code}}
+
+\begin{small}
+\begin{lstlisting}
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Set;
+
+public class asd {
+
+	public static void main(String[] args) {
+				
+		HashMap hm = new HashMap();		
+		String[] letters = {"a","b","c","d","e","f","g","h","i","j",
+		"k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		
+		for (int i = 0 ; i < letters.length ; i++) {
+			hm.put(letters[i],(int)(Math.random()* 10));  }
+
+		Set veriler = hm.entrySet();
+		Set anahtarlar = hm.keySet();
+		Collection degerler = hm.values();
+
+		System.out.println("Datas : " + veriler);
+		System.out.println("Keys : " + anahtarlar);
+		System.out.println("Values : " + degerler);
+		
+		List<String> list = new ArrayList<String>(anahtarlar);
+		List<String> values = new ArrayList<String>(degerler);
+
+		Scanner x = new Scanner(System.in);
+		System.out.println("Enter a character: ");
+		char c = x.next().charAt(0);
+		
+		if (list.contains(String.valueOf(c))) {
+			System.out.println("yes");
+			System.out.println("character : " + c +
+			" and the value is : " + hm.get(String.valueOf(c)));
+		}
+		else
+			System.out.println("Enter a valid charachter!");
+	}
+
+}
+\end{lstlisting}
+\end{small}
+
+
+{\large \textbf{b. Explanation}}
+\newline
+\newline
+\begin{flushleft}
+I used hashMap class while I writing this code in Java, because this class, hold a value for each key. Firstly, I created an array which contains all alphabet letters, then with using for loop, I assigned a number to each letter, and I put these letters and numbers to the map. In this case, I obtained keys and values together in a map.
+
+\end{flushleft}
+
+\begin{lstlisting}
+HashMap hm = new HashMap();
+		
+String[] letters = {"a","b","c","d","e","f","g","h","i","j","k",
+"l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		
+for (int i = 0 ; i < letters.length ; i++) {
+	hm.put(letters[i],(int)(Math.random()* 10));
+}
+
+Set veriler = hm.entrySet();
+Set anahtarlar = hm.keySet();
+Collection degerler = hm.values();
+
+System.out.println("Datas : " + veriler);
+System.out.println("Keys : " + anahtarlar);
+System.out.println("Values : " + degerler);
+\end{lstlisting}
+
+
+\begin{flushleft}
+Secondly, I convert these set's to the arraylist's in order to do some processes on these lists.
+\end{flushleft}
+\begin{lstlisting}
+List<String> list = new ArrayList<String>(anahtarlar);
+List<String> values = new ArrayList<String>(degerler);
+\end{lstlisting}
+
+\newpage
+\begin{flushleft}
+Then, I used scanner method which allows the user to enter variable, and with an if statement, I check whether the entered value is equal to any letter of the alphabet. If it's "yes" then it returns the entered variable -key- , with it's value.
+\end{flushleft}
+\begin{lstlisting}
+Scanner x = new Scanner(System.in);
+System.out.println("Enter a character: ");
+char c = x.next().charAt(0);
+		
+if (list.contains(String.valueOf(c))) {
+	System.out.println("yes");
+	System.out.println("character : " + c +
+	" and the value is : " + hm.get(String.valueOf(c)));
+		}
+else
+	System.out.println("Enter a valid charachter!");
+\end{lstlisting}
+
+\end{document}
